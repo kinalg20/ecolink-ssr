@@ -1,0 +1,337 @@
+.blog-section {
+  margin: 30px 0;
+}
+.blog-section .container .responsive-blog-search {
+  display: none;
+}
+.blog-section .container .blog-calltoaction {
+  display: grid;
+  grid-template-columns: 65% 33%;
+  grid-gap: 21px;
+}
+.blog-section .container .blog-calltoaction .blog .head-calltoaction {
+  border-radius: 5px;
+  height: 150px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  align-items: center;
+  position: relative;
+}
+.blog-section .container .blog-calltoaction .blog .head-calltoaction .shop-chemical {
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+  text-align: center;
+}
+.blog-section .container .blog-calltoaction .blog .head-calltoaction .shop-chemical button {
+  border: 1px solid var(--primary);
+  background: var(--primary);
+  border-radius: 5px;
+  padding: 5px 10px;
+  bottom: 0;
+}
+.blog-section .container .blog-calltoaction .blog .head-calltoaction .shop-chemical button a {
+  color: white;
+  text-decoration: none;
+}
+.blog-section .container .blog-calltoaction .blog .blog-image {
+  height: 250px;
+}
+.blog-section .container .blog-calltoaction .blog .blog-image img {
+  width: 100%;
+  display: flex;
+  height: 100%;
+  border-radius: 10px;
+  margin: auto;
+}
+.blog-section .container .blog-calltoaction .blog .card {
+  padding: 20px 0;
+  width: 100%;
+  margin: 5px;
+}
+.blog-section .container .blog-calltoaction .blog .blog-text {
+  overflow: hidden;
+}
+.blog-section .container .blog-calltoaction .blog .blog-text p {
+  font-size: 18px;
+  line-height: 30px;
+  text-align: justify;
+  margin-bottom: 0;
+}
+.blog-section .container .blog-calltoaction .blog .digital-links {
+  margin: 30px 0;
+  width: 40%;
+}
+.blog-section .container .blog-calltoaction .blog .digital-links ul {
+  font-size: 20px;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.blog-section .container .blog-calltoaction .blog .digital-links ul a {
+  cursor: pointer;
+  color: black;
+}
+.blog-section .container .blog-calltoaction .calltoactionshop {
+  position: relative;
+}
+.blog-section .container .blog-calltoaction .calltoactionshop .chemicalscalltoaction {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border: 1px solid #d7d1d1;
+  border-radius: 10px;
+  background-size: cover;
+  align-items: center;
+  position: relative;
+  height: 300px;
+}
+.blog-section .container .blog-calltoaction .calltoactionshop .chemicalscalltoaction .chemical-div {
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+  text-align: center;
+}
+.blog-section .container .blog-calltoaction .calltoactionshop .chemicalscalltoaction .chemical-div button {
+  border: 1px solid var(--primary);
+  background: var(--primary);
+  border-radius: 5px;
+  padding: 5px 10px;
+  bottom: 0;
+}
+.blog-section .container .blog-calltoaction .calltoactionshop .chemicalscalltoaction .chemical-div button a {
+  color: white;
+  text-decoration: none;
+}
+.blog-section .container .blog-calltoaction .calltoactionshop .blog-search {
+  text-align: center;
+  padding: 20px 0;
+}
+.blog-section .container .blog-calltoaction .calltoactionshop .blog-search span {
+  width: 100%;
+}
+.blog-section .container .blog-calltoaction .calltoactionshop .blog-search span input {
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid lightgray;
+  height: 35px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  padding-left: 25px;
+}
+.blog-section .container .blog-calltoaction .calltoactionshop .ctasection {
+  height: 350px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border: 1px solid #d7d1d1;
+  border-radius: 10px;
+  background: whitesmoke;
+  position: relative;
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.blog-section .container .blog-calltoaction .calltoactionshop .ctasection .innerctadiv {
+  position: absolute;
+  width: 100%;
+  bottom: 10%;
+  text-align: center;
+}
+.blog-section .container .blog-calltoaction .calltoactionshop .ctasection .innerctadiv button {
+  border: 1px solid var(--primary);
+  background: var(--primary);
+  border-radius: 5px;
+  padding: 5px 10px;
+  bottom: 0;
+}
+.blog-section .container .blog-calltoaction .calltoactionshop .ctasection .innerctadiv button a {
+  color: white;
+  text-decoration: none;
+}
+.blog-section .container .blog-calltoaction .calltoactionshop .inner_sidebar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 4%;
+  margin-top: 30px;
+}
+.blog-section .container .blog-calltoaction .calltoactionshop .inner_sidebar .widget {
+  margin-bottom: 100px;
+}
+.blog-section .container .blog-calltoaction .calltoactionshop .inner_sidebar .widget ul {
+  list-style: none;
+  padding: 0;
+}
+.blog-section .container .blog-calltoaction .calltoactionshop .inner_sidebar .widget ul li {
+  color: #3f661c;
+}
+.blog-section .container .blog-calltoaction .calltoactionshop .inner_sidebar .widget ul li:hover {
+  color: #0a6fbd;
+}
+.blog-section .container .blog-calltoaction .calltoactionshop .inner_sidebar .widget_text .textwidget i {
+  margin: 0 10px;
+}
+.blog-section .container .blog-calltoaction .calltoactionshop .inner_sidebar .widget_text .textwidget .shopButton2020 {
+  background-color: #0a6fbd;
+  border-radius: 3px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff !important;
+  font-family: Arial;
+  font-size: 17px;
+  padding: 16px 31px;
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.blog-section .container .blog-calltoaction .calltoactionshop .inner_sidebar .widget_text .textwidget .shopButton2020 a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.blog-section .container .blog-calltoaction .calltoactionshop .inner_sidebar .widget_text .textwidget .requestButton2020 {
+  background-color: #009e49;
+  border-radius: 3px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff !important;
+  font-family: Arial;
+  font-size: 17px;
+  padding: 16px 31px;
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.blog-section .container .blog-calltoaction .calltoactionshop .inner_sidebar .widget_text .textwidget .pdsButton2020 {
+  background-color: #000000;
+  border-radius: 3px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff !important;
+  font-family: Arial;
+  font-size: 17px;
+  padding: 16px 31px;
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.blog-section .container .blog-calltoaction .calltoactionshop .inner_sidebar .widget_text .textwidget .contactButton2020 {
+  background-color: #777777;
+  border-radius: 3px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff !important;
+  font-family: Arial;
+  font-size: 17px;
+  padding: 16px 31px;
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .blog-section .container .responsive-blog-search {
+    display: block;
+    text-align: center;
+    padding: 20px 0;
+  }
+  .blog-section .container .responsive-blog-search span {
+    width: 100%;
+  }
+  .blog-section .container .responsive-blog-search span input {
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid lightgray;
+    height: 35px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    padding-left: 25px;
+  }
+  .blog-section .container .blog-search {
+    display: none;
+  }
+  .blog-section .container .search-result {
+    display: none;
+  }
+  .blog-section .container .blog-calltoaction {
+    grid-template-columns: 100%;
+  }
+  .blog-section .container .blog-calltoaction .calltoactionshop .chemicalscalltoaction {
+    margin-bottom: 30px;
+    height: 270px;
+  }
+  .blog-section .container .blog-calltoaction .calltoactionshop .ctasection {
+    height: 270px;
+  }
+}
+.search-result {
+  background: white;
+  width: 90%;
+  min-height: 10px;
+  max-height: 350px;
+  position: absolute;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  top: 371px;
+  z-index: 999;
+  padding: 20px 20px 0 5px;
+  overflow-y: scroll;
+  left: 15px;
+}
+.search-result ul {
+  padding-left: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.search-result ul li {
+  list-style: none;
+}
+.search-result ul hr {
+  height: 0.5px;
+}
+
+.responsive-search-result {
+  position: absolute;
+  background: #fff;
+  width: 88%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  left: 45px;
+  min-height: 10px;
+  max-height: 350px;
+  overflow-y: scroll;
+  top: 190px;
+  padding: 20px 20px 0 5px;
+}
+.responsive-search-result ul {
+  padding-left: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.responsive-search-result ul li {
+  list-style: none;
+}
+.responsive-search-result ul hr {
+  height: 0.5px;
+}
+
+#search-result .modal-body ul {
+  padding-left: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+#search-result .modal-body ul li {
+  list-style: none;
+}
+#search-result .modal-body ul hr {
+  height: 0.5px;
+}
+
+@media (max-width: 426px) {
+  .responsive-search-result {
+    left: 26px;
+    top: 210px;
+  }
+  .blog-section .container .blog-calltoaction .blog .digital-links {
+    width: 70%;
+  }
+}
+@media (max-width: 321px) {
+  .responsive-search-result {
+    left: 20px;
+    top: 255px;
+  }
+}/*# sourceMappingURL=blog.component.css.map */
