@@ -8,7 +8,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   providedIn: 'root'
 })
 export class ApiServiceService {
-  public _baseurl = environment.api_baseurl;
+  public _baseurl = 'https://ecolink.brandtalks.in/api/'; //environment.api_baseurl;
   header: any;
   token: any;
   subscribedmsg = new BehaviorSubject<any>({});

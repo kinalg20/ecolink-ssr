@@ -1,7 +1,9 @@
-import { Component} from '@angular/core';
+import { Component, Inject, PLATFORM_ID} from '@angular/core';
 import { ApiServiceService } from './Services/api-service.service';
 import { ConnectionService } from 'ng-connection-service';
 import { NavigationEnd, Router } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
+import { Meta } from '@angular/platform-browser';
 
 // import { Gtag } from 'angular-gtag';
 declare const gtag : Function;
@@ -21,10 +23,13 @@ export class AppComponent {
   isShow: boolean = true;
   topPosToStartShowing = 100;
   GoogleMapAPIKey: string = 'AIzaSyDG8Z4FQOFQ9ddX0INeSaY11MLRTyr-0Xw'
-  constructor(private _apiService: ApiServiceService, private connectionService: ConnectionService , private router : Router) {
+  constructor(private meta : Meta, private _apiService: ApiServiceService, private connectionService: ConnectionService, private router: Router, @Inject(PLATFORM_ID) private platformId: Object) {
     this.router.events.subscribe((event)=>{
       if(event instanceof NavigationEnd){
-        gtag('config','UA-223439069-1', {'page_path': event.urlAfterRedirects});
+        //gtag('config','UA-223439069-1', {'page_path': event.urlAfterRedirects});
+        if (isPlatformBrowser(this.platformId)) {
+          gtag('config', 'UA-223439069-1', { page_path: event.urlAfterRedirects });
+        }
       }
     })
     
@@ -39,6 +44,11 @@ export class AppComponent {
     })
   }
   ngOnInit() {
+
+    //this.meta.addTag({ name: 'description', content: "test metas." });
+    //this._apiService.getPageBySlug('home-page').subscribe(res => {
+    //  console.log(res);
+    //});
   }
   // public addToHomeScreen(): void {
   //   // hide our user interface that shows our A2HS button

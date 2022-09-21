@@ -1,5 +1,6 @@
 import { JsonpClientBackend } from '@angular/common/http';
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { Store } from '@ngxs/store';
 import { ApiServiceService } from 'src/app/Services/api-service.service';
@@ -24,8 +25,9 @@ export class ProductCartComponent implements OnInit {
   CartShimmer: boolean = true;
   cartUpdated: boolean = false;
   lift_gate_charge: number = 0;
-  constructor(private _ApiService: ApiServiceService, private route: Router, private store: Store) { }
+  constructor(private _ApiService: ApiServiceService, private route: Router, private store: Store, private meta: Meta) { }
   async ngOnInit() {
+    this.meta.updateTag({ name: 'description', content: "sid meta tags." });
     this.UserLogin = localStorage.getItem('ecolink_user_credential');
     await this.getStaticData();
     await this.getCartData();

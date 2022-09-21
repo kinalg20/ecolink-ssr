@@ -7,8 +7,8 @@ import {
   HttpInterceptor,
   HttpResponse
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import {tap} from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import {map, tap} from 'rxjs/operators';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
@@ -16,20 +16,22 @@ export class AuthInterceptor implements HttpInterceptor {
   constructor(private meta : Meta) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+
+    
     return next.handle(request).pipe(tap((event: HttpEvent<any>) => {
       if (event instanceof HttpResponse) {
-          console.log(event);  
+          console.log('debugger',event);  
           if(!Array.isArray(event.body.data)) {
-            if(event.body.data.meta_description)   {
+            if(event.body?.data?.meta_description)   {
               this.meta.addTag({ name: 'title', content: event.body.data.meta_title});  
-              this.meta.addTag({ name: 'description', content: event.body.data.meta_description });  
+              this.meta.updateTag({ name: 'description', content: event.body.data.meta_description });  
             }
           }
           else {
             event.body.data.map((res:any)=>{
-              if(res.meta_description){
+              if(res?.meta_description){
                 this.meta.addTag({ name: 'title', content: res.meta_title});  
-                this.meta.addTag({ name: 'description', content: res.meta_description });
+                this.meta.updateTag({ name: 'description', content: res.meta_description });
               }
             })
           }    
