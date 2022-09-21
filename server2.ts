@@ -1,50 +1,23 @@
 (global as any).WebSocket = require('ws');
 (global as any).XMLHttpRequest = require('xhr2');
-
 import 'zone.js/dist/zone-node';
-import 'localstorage-polyfill';
 
 import {APP_BASE_HREF} from '@angular/common';
 import {ngExpressEngine} from '@nguniversal/express-engine';
 import * as express from 'express';
 import {existsSync} from 'fs';
 import { join } from 'path';
+import 'localstorage-polyfill';
 
-const domino = require('domino');
-const fs = require('fs');
-const path = require('path');
-
-const distFolder = join(process.cwd(), 'dist/Ecolink/browser');
-//const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
-const template = fs.readFileSync(path.join(distFolder, 'index.html')).toString();
-const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
-const win = domino.createWindow(template.toString());
-
-//const { AppServerModuleNgFactory } =
-//    require('dist/Ecolink/server/main.bundle');
-
-global['window'] = win;
-global['document'] = win.document;
-global['self'] = win
-global['IDBIndex'] = win.IDBIndex
-global['document'] = win.document
-global['navigator'] = win.navigator
-global['getComputedStyle'] = win.getComputedStyle;
 global['localStorage'] = localStorage;
 
 import {AppServerModule} from './src/main.server';
-import { renderModuleFactory } from '@angular/platform-server';
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
-
-  
-
   const server = express();
-  
-
-
-
+  const distFolder = join(process.cwd(), 'dist/Ecolink/browser');
+  const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
 
   // Our Universal express-engine (found @ https://github.com/angular/universal/tree/main/modules/express-engine)
   server.engine('html', ngExpressEngine({
@@ -52,20 +25,7 @@ export function app(): express.Express {
   }));
 
   server.set('view engine', 'html');
-    server.set('views', distFolder);
-
-    //server.route('*').get((req, res) => {
-    //    renderModuleFactory(AppServerModuleNgFactory, {
-    //        document: indexHtml,
-    //        url: req.url
-    //    })
-    //        .then((html) => res.status(200).send(html))
-    //        .catch(err => {
-    //            console.log(err);
-    //            res.sendStatus(500);
-    //        });
-    //});
-
+  server.set('views', distFolder);
 
   // Example Express Rest API endpoints
   // server.get('/api/**', (req, res) => { });
@@ -75,9 +35,8 @@ export function app(): express.Express {
   }));
 
   // All regular routes use the Universal engine
-    server.get('*', (req, res, next) => {
-        if (req.url.includes('/api')) return next();
-      res.render(indexHtml, { req, providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }] });
+  server.get('*', (req, res) => {
+    res.render(indexHtml, { req, providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }] });
   });
 
   return server;
